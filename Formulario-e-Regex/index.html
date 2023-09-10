@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário e Regex</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form method="post" onsubmit="return validations()">
+
+        <p>Nome:</p>
+        <input type="text" id="name" name="name" placeholder="Digite o seu nome" required>
+
+        <p>Email:</p>
+        <input type="email" id="email" name="email" placeholder="Digite o seu email" required>
+
+        <p>Telefone:</p>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Digite o seu número de telefone" size="30" required>
+
+        <p>CPF:</p>
+        <input type="text" id="cpf" name="cpf" placeholder="Digite o seu CPF" required>
+
+        <div>
+            <p>Gênero:</p>
+            <input type="radio" name="gender" value="Feminino" checked>Feminino</input>
+            <input type="radio" name="gender" value="Masculino">Masculino</input>
+            <input type="radio" name="gender" value="Outro">Outro</input>
+        </div>
+
+        </div>
+            <p>Interesses:</p>
+            <input type="checkbox" name="interests" value="Esportes">Esportes</input>
+            <input type="checkbox" name="interests" value="Arte">Arte</input>
+            <input type="checkbox" name="interests" value="Tecnologia">Tecnologia</input>
+            <input type="checkbox" name="interests" value="Viagens">Viagens</input>
+        </div>
+
+        <p>País de origem:</p>
+        <select id="country" name="country" required></select>
+
+        <p>Boletim:</p>
+        <input id="reportCard" type="checkbox" name="reportCard" >Assinar</input>
+
+        <p>Senha:</p>
+        <input type="password" id="password" name="password" minlength="8" placeholder="Digite a sua senha" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" placeholder="Confirme a sua senha" required>
+
+        <button type="submit" onclick="validations">Enviar respostas</button>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
