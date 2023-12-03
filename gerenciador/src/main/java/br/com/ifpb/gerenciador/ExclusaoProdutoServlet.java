@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ExclusaoProdutoServlet")
 public class ExclusaoProdutoServlet extends HttpServlet {
 	
-	private ProdutoDAO produtoDAO = new ProdutoDAO(); // Crie uma instância de ProdutoDAO
+	private ProdutoDAO produtoDAO = new ProdutoDAO(); 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    int id = Integer.parseInt(request.getParameter("id"));
 	    produtoDAO.excluirProduto(id);
 
-	    response.sendRedirect("ListagemServlet"); // Redireciona para a página de listagem após a exclusão
+	    response.sendRedirect("ListagemServlet"); 
 	}
 
 
