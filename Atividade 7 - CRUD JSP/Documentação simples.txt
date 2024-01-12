@@ -1,0 +1,34 @@
+Documentação simples das classes do aplicativo, explicando a estrutura geral e como ele funciona:
+
+**Classe Produto:**
+- A classe `Produto` representa um produto com atributos como `id`, `nome` e `preco`.
+- O construtor da classe `Produto` aceita apenas o `nome` e o `preco`. O `id` é gerado automaticamente à medida que os produtos são criados.
+- A classe inclui métodos getters e setters para acessar e modificar os atributos.
+
+**Classe ProdutoDAO:**
+- A classe `ProdutoDAO` é responsável pela interação com o banco de dados ou sistema de armazenamento de dados.
+- Ela contém métodos para listar produtos, adicionar um novo produto, obter um produto por ID, atualizar um produto e excluir um produto.
+- Os métodos são usados pelos servlets para realizar operações de CRUD.
+
+**Servlet CriacaoProdutoServlet:**
+- O servlet `CriacaoProdutoServlet` lida com a criação de novos produtos.
+- Quando um usuário acessa a página de criação, ele preenche um formulário com o nome e o preço do produto.
+- O servlet recebe esses dados, cria uma nova instância de `Produto` com um novo `id` gerado automaticamente e adiciona o produto ao banco de dados por meio do `ProdutoDAO`.
+
+**Página JSP Listagem (listagem.jsp):**
+- A página JSP `listagem.jsp` exibe a lista de produtos.
+- Ela utiliza a tag JSTL `<c:forEach>` para iterar sobre a lista de produtos e exibir seus detalhes, incluindo `id`, `nome`, `preco`.
+- A página também inclui links de "Editar" e "Remover" que redirecionam para os servlets correspondentes.
+
+**Servlet AtualizacaoProdutoServlet:**
+- O servlet `AtualizacaoProdutoServlet` lida com a atualização de produtos.
+- Quando um usuário acessa a página de atualização, o servlet recupera o `id` do produto da URL.
+- Com base no `id`, ele obtém o produto correspondente por meio do `ProdutoDAO` e exibe um formulário para editar o `nome` e o `preco` do produto.
+- Após a edição, o servlet atualiza o produto no banco de dados.
+
+**Servlet ExclusaoProdutoServlet:**
+- O servlet `ExclusaoProdutoServlet` lida com a exclusão de produtos.
+- Quando um usuário acessa a página de exclusão, o servlet recupera o `id` do produto da URL.
+- Com base no `id`, ele obtém o produto correspondente por meio do `ProdutoDAO` e o exclui do banco de dados.
+
+O aplicativo funciona permitindo que os usuários criem, editem, listem e excluam produtos. Os produtos são armazenados em um banco de dados ou sistema de armazenamento de dados, e as operações de CRUD são realizadas por meio do `ProdutoDAO`. As páginas JSP são usadas para exibir e coletar dados dos usuários, e os servlets processam as solicitações HTTP e coordenam as operações de negócios.
